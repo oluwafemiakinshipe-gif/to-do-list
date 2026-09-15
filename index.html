@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do List</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="todo-container">
+
+        <h1>My To-Do List</h1>
+
+        <div class="input-area">
+
+            <!-- Task -->
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Enter a task"
+            >
+
+            <!-- Date -->
+            <input 
+                type="date" 
+                id="dateInput"
+            >
+
+            <!-- Time -->
+            <input 
+                type="time" 
+                id="timeInput"
+            >
+
+            <!-- Add Task -->
+            <button id="addTaskBtn">Add Task</button>
+
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Task Complete</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody id="taskList">
+                <!-- Tasks will be added here by JavaScript -->
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

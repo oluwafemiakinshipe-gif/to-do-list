@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #7b00ff, #b000ff);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    margin: 0;
+}
+
+.todo-container {
+    background: white;
+    width: 80%;
+    max-width: 750px;
+
+    padding: 35px;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+input {
+    padding: 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+#taskInput {
+    flex: 1;
+    min-width: 200px;
+}
+
+button {
+    padding: 15px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #343a40;
+    color: white;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #343a40;
+    color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.complete-btn {
+    background: green;
+}
+
+.delete-btn {
+    background: crimson;
+}
