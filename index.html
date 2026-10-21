@@ -1,69 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>My To-Do List</title>
-
-    <!-- Connect CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="todo-container">
-
+    <main class="container">
         <h1>My To-Do List</h1>
+        <p class="subtitle">Plan your tasks. Stay on time.</p>
 
-        <div class="input-area">
-
-            <!-- Task -->
-            <input 
-                type="text" 
-                id="taskInput" 
+        <form id="taskForm" class="task-form">
+            <input
+                type="text"
+                id="taskInput"
                 placeholder="Enter a task"
+                aria-label="Task name"
+                required
             >
 
-            <!-- Date -->
-            <input 
-                type="date" 
-                id="dateInput"
+            <input
+                type="date"
+                id="taskDate"
+                aria-label="Task date"
+                required
             >
 
-            <!-- Time -->
-            <input 
-                type="time" 
-                id="timeInput"
+            <input
+                type="time"
+                id="taskTime"
+                aria-label="Task start time"
+                required
             >
 
-            <!-- Add Task -->
-            <button id="addTaskBtn">Add Task</button>
+            <button type="submit" id="addTaskBtn">Add Task</button>
+        </form>
 
+        <div class="notification-settings">
+            <span id="notificationStatus">
+                In-app reminders are enabled while this page is open.
+            </span>
+            <button type="button" id="enableNotificationsBtn">
+                Enable Browser Notifications
+            </button>
         </div>
 
-        <table>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Countdown</th>
+                        <th>Task Complete</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="taskList"></tbody>
+            </table>
+        </div>
 
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Task Complete</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
+        <p id="emptyMessage">No tasks yet. Add your first task!</p>
+    </main>
 
-            <tbody id="taskList">
-                <!-- Tasks will be added here by JavaScript -->
-            </tbody>
-
-        </table>
-
+    <!-- Reminder popup -->
+    <div
+        id="reminderModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalMessage"
+        hidden
+    >
+        <div class="modal-content">
+            <div id="modalIcon" class="modal-icon">🔔</div>
+            <h2 id="modalTitle">Task Reminder!</h2>
+            <p id="modalMessage"></p>
+            <button type="button" id="closeModalBtn">Got it!</button>
+        </div>
     </div>
 
-    <!-- Connect JavaScript -->
     <script src="script.js"></script>
-
 </body>
 </html>
